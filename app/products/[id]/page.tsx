@@ -6,9 +6,9 @@ import { ShoppingCart, ArrowRight, ArrowLeft, Star } from 'lucide-react';
 import { getProduct, getAllProducts } from '@/lib/data/products';
 import { useApp } from '@/app/providers';
 
-// ✅ الحل: تعريف generateStaticParams
+// ✅ لازم تكون دالة async وترجع كل الـ IDs
 export async function generateStaticParams() {
-  const products = await getAllProducts(); // لازم تكون عندك دالة بترجع كل المنتجات
+  const products = await getAllProducts();
   return products.map((product) => ({
     id: product.id.toString(),
   }));
