@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, ShoppingCart, Globe } from 'lucide-react';
+import { Menu, X, ShoppingCart, Globe, UserPlus } from 'lucide-react';
 import { useApp } from '@/app/providers';
 
 export function Header() {
@@ -59,6 +59,16 @@ export function Header() {
               <Globe size={20} />
               <span className="sr-only">تغيير اللغة</span>
             </button>
+
+            {/* Sign Up */}
+            <Link
+              href="/register"
+              className="p-2 text-gray-600 hover:text-green-600 transition-colors"
+              aria-label="Sign up"
+            >
+              <UserPlus size={20} />
+              <span className="sr-only">إنشاء حساب جديد</span>
+            </Link>
 
             {/* Cart */}
             <Link
